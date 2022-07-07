@@ -12,3 +12,39 @@ background-image: linear-gradient(to left, #A20292, #520049 ) ;
 .navbar h2{
   font-size: 14px;
 }
+
+.left--nav{
+display: flex;
+align-items: center;
+}
+
+.left--nav h1 {
+padding-left:14px;
+}
+
+.input--div{
+display: flex;
+margin-top: 100px;
+justify-content: center;
+}
+
+#form1{
+margin-right:28px;
+}
+
+#form1, #form2{
+padding:14px 14px 14px 14px;
+width:400px;
+border-radius: 4px;
+}
+
+.form--button{
+margin-top:50px;
+display: flex;
+justify-content: center;
+}
+
+#button {
+  width: 900px;
+  height:40px;
+}
