@@ -6,7 +6,7 @@ export default function Nav(){
     <div>
       <nav className= "navbar">
         <div className="left--nav">
-          <FontAwesomeIcon icon={faFaceLaughBeam}/>
+          <FontAwesomeIcon className ="face--icon" icon={faFaceLaughBeam}/>
           <h1> Meme Generator</h1>
         </div>
         <h2>React Course Project</h2>
