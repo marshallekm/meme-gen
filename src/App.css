@@ -9,7 +9,7 @@ background-image: linear-gradient(to left, #A20292, #520049 ) ;
 }
 
 .navbar h2{
-  font-size: 14px;
+font-size: 14px;
 }
 
 .left--nav{
@@ -28,7 +28,7 @@ justify-content: center;
 }
 
 .face--icon{
-  font-size:40px;
+font-size:40px;
 }
 
 #form1{
@@ -57,4 +57,10 @@ height:60px;
 cursor:pointer;
 color:white;
 background-image: linear-gradient(to left, #A20292, #520049 )
+}
+
+.meme {
+display: flex;
+justify-content: center;
+padding-top:20px;
 }

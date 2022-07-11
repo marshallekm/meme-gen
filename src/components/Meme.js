@@ -1,17 +1,16 @@
-import React from 'react'
+import React, {useState} from 'react'
 import memesData from "../memesData.js"
 
 export default function Meme(){
 
-const getRandomPic = () => {
+const [memeImage, getMemeImage] = useState("")
 
+
+const getRandomPic = () => {
 const memesArray = memesData.data.memes
 const getIndex = Math.floor(Math.random() * memesArray.length);
-
 const thing = memesArray[getIndex].url
-
-console.log(thing)
-
+getMemeImage(newMemeImage => newMemeImage = thing)
 }
 
 
@@ -29,7 +28,10 @@ console.log(thing)
       </div>
       </div>
     <div className= "form--button">
-      <input onClick ={getRandomPic}type="submit" id="button" value="Get a new meme image!"></input>
+      <input onClick ={getRandomPic} type="submit" id="button" value="Get a new meme image!"></input>
+    </div>
+    <div className ="meme">
+      <img src={memeImage} alt="" />
     </div>
   </div>
 </div>
