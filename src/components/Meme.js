@@ -3,16 +3,31 @@ import memesData from "../memesData.js"
 
 export default function Meme(){
 
-const [memeImage, getMemeImage] = useState("")
+  //
+  //    * Lastly, update the `getMemeImage` function and the markup
+  //    * to reflect our newly reformed state object and array in the
+  //    * correct way.
 
+
+const [memeImage, getMemeImage] = useState({
+  topText: "",
+  bottomText: "",
+  randomImage: "https://i.imgflip.com/43a45p.png"
+})
+
+const [allMemeImages, setAllMemeImages] = useState(memesData)
 
 const getRandomPic = () => {
 const memesArray = memesData.data.memes
 const getIndex = Math.floor(Math.random() * memesArray.length);
 const thing = memesArray[getIndex].url
-getMemeImage(newMemeImage => newMemeImage = thing)
+getMemeImage(newMemeImage => {
+  return {
+    ...newMemeImage,
+    randomImage: `${thing}`
+  }
+  })
 }
-
 
   return (
 <div>
@@ -31,7 +46,7 @@ getMemeImage(newMemeImage => newMemeImage = thing)
       <input onClick ={getRandomPic} type="submit" id="button" value="Get a new meme image!"></input>
     </div>
     <div className ="meme">
-      <img src={memeImage} alt="" />
+      <img src={memeImage.randomImage} alt="" />
     </div>
   </div>
 </div>
