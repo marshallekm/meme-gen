@@ -3,12 +3,6 @@ import memesData from "../memesData.js"
 
 export default function Meme(){
 
-  //
-  //    * Lastly, update the `getMemeImage` function and the markup
-  //    * to reflect our newly reformed state object and array in the
-  //    * correct way.
-
-
 const [memeImage, getMemeImage] = useState({
   topText: "",
   bottomText: "",
@@ -18,13 +12,13 @@ const [memeImage, getMemeImage] = useState({
 const [allMemeImages, setAllMemeImages] = useState(memesData)
 
 const getRandomPic = () => {
-const memesArray = memesData.data.memes
+const memesArray = allMemeImages.data.memes
 const getIndex = Math.floor(Math.random() * memesArray.length);
 const thing = memesArray[getIndex].url
 getMemeImage(newMemeImage => {
   return {
     ...newMemeImage,
-    randomImage: `${thing}`
+    randomImage: thing
   }
   })
 }
@@ -33,20 +27,31 @@ getMemeImage(newMemeImage => {
 <div>
   <div className= "form--div">
     <div className= "input--div">
-      <div className="form--one">
-        <label for ="form1"></label>
-        <input type="text" id="form1" name="form1" value="Top text"></input>
+        <input
+        type= "text"
+        placeholder="Top"
+        className="form1"
+         />
+
+        <input
+        type="text"
+        placeholder="Bottom"
+        className="form2"
+        />
       </div>
-      <div className= "form--two">
-        <label for ="form2"></label>
-        <input type="text" id="form2" name="form2" value= "Bottom text"></input>
-      </div>
-      </div>
-    <div className= "form--button">
-      <input onClick ={getRandomPic} type="submit" id="button" value="Get a new meme image!"></input>
-    </div>
+<div className="button-div">
+      <button
+        className="form--button"
+        onClick={getRandomPic}
+        >
+          Click me!
+      </button>
+</div>
+
     <div className ="meme">
-      <img src={memeImage.randomImage} alt="" />
+      <img src={memeImage.randomImage} className="meme--image" />
+      <h2 className = "meme--text top">Hey</h2>
+      <h2 className = "meme--text bottom">Hi</h2>
     </div>
   </div>
 </div>
